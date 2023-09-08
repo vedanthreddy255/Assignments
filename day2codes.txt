@@ -1,0 +1,93 @@
+day2
+1
+static void Main(string[] args)
+{
+    StreamReader sr = new StreamReader(@"C:\Users\vedareddy\Desktop\c#codes.txt");
+
+    while (sr.EndOfStream==false)
+    {
+        Console.WriteLine(sr.ReadLine());
+    }
+    Console.ReadLine();
+    sr.Close();
+
+}
+
+2.
+FileInfo FInfo = new FileInfo(@"C:\Users\vedareddy\Desktop\Deloitte-html\c#codes.txt");
+Console.WriteLine("My File's Name: \"" + FInfo.Name + "\"");
+DateTime dtCreationTime = FInfo.CreationTime;
+Console.WriteLine("Date and Time File Created: " + dtCreationTime.ToString());
+Console.WriteLine("myFile Extension: " + FInfo.Extension);
+Console.WriteLine("myFile total Size: " + FInfo.Length.ToString());
+Console.WriteLine("myFile filepath: " + FInfo.DirectoryName);
+Console.WriteLine("My File's Full Name: \"" + FInfo.FullName + "\"");
+
+
+3.yes we can use multiple catch blocks for single try block by using different exceptions like 
+
+try{
+}
+catch(Exception DivideByZero)
+{
+}
+catch(Exception ArrayOutOfBound)
+{
+}
+catch(Exception e}
+{
+}
+
+
+4.
+class Product
+{
+    public int ProductId { get; set; }
+    public string ProductName { get; set; }
+    public int UnitPrice { get; set; }
+
+    public int Quantity { get; set; }
+    public override string ToString()
+    {
+        string str = string.Format("{0},{1},{2},{3}", ProductId,ProductName,UnitPrice,Quantity);
+        return str;
+    }
+}
+static void Main(string[] args)
+{
+  
+
+    List<Product> products = new List<Product>();
+    for(int i = 0; i < 5; i++)
+    {
+        Product objectName = new Product();
+        Console.WriteLine("Enter Product Id:");
+        objectName.ProductId = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter Product Name:");
+        objectName.ProductName = Console.ReadLine();
+        Console.WriteLine("Enter Unit Price:");
+        objectName.UnitPrice = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter Quantity:");
+        objectName.Quantity = int.Parse(Console.ReadLine());
+        products.Add(objectName);
+    }
+
+    foreach (Product p in products)
+    {
+        Console.WriteLine(p.ToString());
+    }
+
+    Console.WriteLine("Enter a id to remove it:");
+    int id=int.Parse(Console.ReadLine());
+    int index = -1;
+    for(int i = 0; i < products.Count; i++)
+    {
+        if (products[i].ProductId ==id)
+        {
+            index = i; break;
+        }
+    }
+    products.RemoveAt(index);
+    Console.ReadLine();
+
+}
