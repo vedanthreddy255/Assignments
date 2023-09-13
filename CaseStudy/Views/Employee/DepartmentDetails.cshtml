@@ -1,0 +1,14 @@
+﻿
+@{
+    List<string> uniqueDepartmentNames = ViewBag.UniqueDepartmentNames;
+}
+
+<h1>Depart Names</h1>
+<ul>
+    @foreach(var departmentName in uniqueDepartmentNames)
+    {
+        <li>
+            <a asp-controller="Employee" asp-action="Dept" asp-route-id="@departmentName">@departmentName</a>
+        </li>
+    }
+</ul>
