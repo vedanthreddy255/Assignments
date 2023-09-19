@@ -1,0 +1,80 @@
+1. The Object class is the base class for all the classes in the . Net Framework
+
+2.
+string name = "";
+string password1 = "ved";
+string password="";
+Console.WriteLine("Enter name");
+name= Console.ReadLine();
+Console.WriteLine("Enter password");
+password = Console.ReadLine();
+if(name==password)
+{
+    Console.WriteLine("hello admin");
+}
+else
+{
+    Console.WriteLine("check name and password");
+}
+Console.ReadLine();
+
+
+
+3.
+int pid = 0;
+string pname = "";
+int unit = 0;
+int quantity = 0;
+
+Console.WriteLine("enter pid:");
+pid=int.Parse(Console.ReadLine());
+Console.WriteLine("enter pname:");
+pname=Console.ReadLine();
+Console.WriteLine("enter unit:");
+unit= int.Parse(Console.ReadLine());
+Console.WriteLine("enter quantity:");
+quantity= int.Parse(Console.ReadLine());
+int tamount = 0;
+tamount = quantity * unit;
+int discount = 0;
+if (quantity > 50)
+{
+    discount = (tamount*30)/100;
+}
+else if (quantity > 30)
+{
+    discount = (tamount * 20) / 100;
+}
+else if(quantity > 10)
+{
+    discount = (tamount * 10) / 100;
+}
+else
+{
+    discount = 0;
+}
+Console.WriteLine("*********************************************************");
+Console.WriteLine("Final Report\n");
+Console.WriteLine(" Product Id : {0} \n Product Name : {1} \n Unit Price : {2} \n Quantity : {3} \n Total Amount : {4} \n Discounted Amount : {5}",pid,pname,unit,quantity,tamount,discount);
+Console.WriteLine(" Finalamount:"+" "+(tamount - discount));
+
+Console.ReadLine();
+
+
+
+
+
+day2
+1
+static void Main(string[] args)
+{
+    StreamReader sr = new StreamReader(@"C:\Users\vedareddy\Desktop\c#codes.txt");
+
+    while (sr.EndOfStream==false)
+    {
+        Console.WriteLine(sr.ReadLine());
+    }
+    Console.ReadLine();
+    sr.Close();
+
+}
